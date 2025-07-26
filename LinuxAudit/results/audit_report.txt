@@ -1,0 +1,40 @@
+========== Linux Hardening Audit Report ==========
+Generated on: 2025-07-26 17:58:10.065854
+--------------------------------------------------
+
+[+] OS Info:
+Distributor ID:	Kali
+Description:	Kali GNU/Linux Rolling
+Release:	2025.2
+Codename:	kali-rolling
+
+[+] Firewall Status (UFW):
+ ❌ UFW is installed but inactive
+Status: inactive
+
+[+] SSH Configuration (/etc/ssh/sshd_config):
+ ⚠️ 'PermitRootLogin' not explicitly set
+ ⚠️ 'PasswordAuthentication' not explicitly set
+
+[+] Critical File Permission Check:
+ 🔍 /etc/passwd - Found: 644, Expected: 644
+ ✅ Correct permissions
+ 🔍 /etc/shadow - Found: 640, Expected: 640
+ ✅ Correct permissions
+
+[+] Running Services (Top 5 Non-Essential):
+ ⚠️ Services detected:
+ 🔍   accounts-daemon.service        loaded active running Accounts Service
+ 🔍   colord.service                 loaded active running Manage, Install and Generate Color Profiles
+ 🔍   cron.service                   loaded active running Regular background program processing daemon
+ 🔍   dbus.service                   loaded active running D-Bus System Message Bus
+ 🔍   getty@tty1.service             loaded active running Getty on tty1
+
+[+] Rootkit Sign Check (Basic):
+ ✅ No suspicious path: /dev/.udev
+ ✅ No suspicious path: /dev/.init
+ ✅ No suspicious path: /dev/.tmp
+
+[+] Final Audit Score:
+ ✅ Passed: 5 / 6
+ 📊 Score: 83/100
